@@ -1,0 +1,18 @@
+name: Deploy app to server
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+
+jobs:
+  whitelist_ip:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get runner IP
+      run: |
+        ip=`curl https://ipinfo.io/ip`
+        echo $ip
+        echo "action_runner_ip=$ip" >> $GITHUB_ENV
+    

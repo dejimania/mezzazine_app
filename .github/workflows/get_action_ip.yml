@@ -22,10 +22,8 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_DEFAULT_REGION: us-east-1
         
-  delist_ip:
-    runs-on: ubuntu-latest
-    needs: whitelist_ip
-    steps:
+## Run other procedure here
+
     - name: Remove Github Actions IP from security group
       run: |
         aws ec2 revoke-security-group-ingress --group-id ${{ secrets.AWS_STAGING_SECURITY_GROUP_ID }} --protocol tcp --port 22 --cidr ${{ env.action_runner_ip }}/32

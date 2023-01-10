@@ -24,6 +24,7 @@ jobs:
         
   delist_ip:
     runs-on: ubuntu-latest
+    needs: whitelist_ip
     steps:
     - name: Remove Github Actions IP from security group
       run: |

@@ -1,3 +1,4 @@
+![Mezzanine App](https://github.com/dejimania/mezzazine_app/workflows/Deploy%20app%20to%20server/badge.svg)
 # Example mezzanine project
 
 Trivial example of a [Mezzanine][1] project.
